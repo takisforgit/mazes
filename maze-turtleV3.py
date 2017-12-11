@@ -37,25 +37,7 @@ def moveL():
 	dot("red")
 	print(int(pos()[0]), int(pos()[1])	)
 
-def moveF():
-	global boxSize, startPosition, endPosition
-	checkPos()
-	fd(boxSize)
-	dot("red")
-	print(int(pos()[0]), int(pos()[1])	)
-
-
-def moveB():
-	global boxSize, startPosition, endPosition
-	checkPos()
-	rt(180)
-	fd(boxSize)
-	dot("red")
-	print(int(pos()[0]), int(pos()[1])	)
-
-
-
-
+		
 #### Check Position ####
 def checkPos():
 	global startPosition, endPosition
@@ -71,16 +53,6 @@ def checkPos():
 ################# Main() #########################
 
 def main():
-
-	screen = Screen()
-	screen.setup(500, 500)
-	screen.bgcolor('white')
-
-	screen.onkey(moveF, "Up")
-	screen.onkey(moveR, "Right")
-	screen.onkey(moveL, "Left")
-	screen.onkey(moveB, "Down")
-	screen.listen()
 
 	stack = []
 	visited = []
@@ -162,7 +134,13 @@ def main():
 	# while ( pos()[0] > startPosition[0] and pos()[1] > startPosition[1] \
 	# 	and pos()[0] < endPosition[0] and pos()[1] < endPosition[1]  ) :
 
-	screen.mainloop()
+	moveL()
+	moveR()
+	moveL()
+	moveR()
+	moveL()
+
+
 
 
 
